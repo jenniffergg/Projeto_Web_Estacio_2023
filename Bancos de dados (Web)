@@ -1,0 +1,30 @@
+CREATE DATABASE projeto_web_estacio_06_06_2023;
+
+USE projeto_web_estacio_06_06_2023;
+
+/*criação de tabelas*/
+select * from cadastro;
+CREATE TABLE cadastro (
+	id_cadastro INT NOT NULL AUTO_INCREMENT,
+    nome_completo VARCHAR(100) NOT NULL,
+    email VARCHAR(180) NOT NULL,
+    endereco VARCHAR(60) NOT NULL,
+	senha VARCHAR(15) NOT NULL,
+	PRIMARY KEY (id_cadastro)
+);
+
+INSERT INTO cadastro ( email, nome_completo, senha, endereco) VALUES
+	("fringilla.purus.mauris@dolor.edu","Catarina","LGG13EDQ2","Rua joao barnaber N° 50"),
+    ("amet@inceptoshymenaeos.net","Lucas","DXA11GCZ2","Rua alcides ribero N° 105"),
+    ("dolor.tempus.non@placeratvelitQuisque.co.uk","Gustavo","ITF79RJD2","Rua bonitor N° 550"),
+    ("commodo.ipsum@nonummyipsum.ca","Frederico","LHP74HXM1","Rua mandari N° 03"),
+    ("non.massa@cursusinhendrerit.edu","José","NBA62VFY8","Rua madre de Deus N° 230"),
+    ("sociis.natoque@facilisisfacilisis.com","Rosana","KVV83HIM7","Rua tejucupapo N° 485"),
+    ("id.nunc.interdum@nonmagna.org","Julieta","BSO85TTB9","Rua joao barnaber N° 850"),
+    ("placerat.velit@viverraMaecenas.edu","Rodrigo","VUB37HGR1","Rua guarama N° 35"),
+    ("neque@Cras.ca","Camila","GMH74KYY6","travessa horizontina N° 11"),
+    ("Fusce@ornareplaceratorci.org","João","VIB61LXM9","Rua bom jardim N° 467");
+    
+    /*Comandos de consulta*/
+    SELECT * FROM cadastro;
+    SELECT email, senha FROM cadastro;
