@@ -1,0 +1,52 @@
+CREATE DATABASE projeto_web_19_06_23;
+
+USE projeto_web_19_06_23;
+
+/*criação de tabelas*/
+
+CREATE TABLE cadastro (
+	id_cadastro INT NOT NULL AUTO_INCREMENT,
+    nome_completo VARCHAR(100) NOT NULL,
+    email VARCHAR(180) NOT NULL,
+    endereco VARCHAR(60) NOT NULL,
+	senha VARCHAR(15) NOT NULL,
+    sexo VARCHAR(10) NOT NULL,
+    data_de_nascimento VARCHAR(10) NOT NULL, 
+	PRIMARY KEY (id_cadastro)
+);
+
+CREATE TABLE contato (
+	id_cadastro INT NOT NULL AUTO_INCREMENT,
+    telefone DOUBLE NOT NULL, 
+	FOREIGN KEY (id_cadastro) REFERENCES cadastro(id_cadastro)
+);
+
+/*Inserindo dados nas colunas. Que fica dentro da tabela*/
+INSERT INTO cadastro ( email, nome_completo, senha, endereco, sexo, data_de_nascimento) VALUES
+	("fringilla.purus.mauris@dolor.edu","Catarina de jusus silva ","LGG13EDQ2","Rua joao barnaber N° 50", "Feminino", "22/04/1953"),
+    ("amet@inceptoshymenaeos.net","Lucas mendes de assunção","DXA11GCZ2","Rua alcides ribero N° 105", "Masculino", "15/08/2003"),
+    ("dolor.tempus.non@placeratvelitQuisque.co.uk","Gustavo pedro dos santos","ITF79RJD2","Rua bonitor N° 550", "Masculino", "30/11/1996"),
+    ("commodo.ipsum@nonummyipsum.ca","Frederico jose da silva","LHP74HXM1","Rua mandari N° 03", "Masculino", "01/01/2001"),
+    ("non.massa@cursusinhendrerit.edu","José aferbeiton lima","NBA62VFY8","Rua madre de Deus N° 230", "Masculino", "04/10/2006"),
+    ("sociis.natoque@facilisisfacilisis.com","Rosana dos santos","KVV83HIM7","Rua tejucupapo N° 485", "Feminino", "10/12/1988"),
+    ("id.nunc.interdum@nonmagna.org","Julieta pedritra chavier","BSO85TTB9","Rua joao barnaber N° 850", "Feminino", "19/11/2001"),
+    ("placerat.velit@viverraMaecenas.edu","Rodrigo bruno  pereira","VUB37HGR1","Rua guarama N° 35", "Masculino", "12/10/2004"),
+    ("neque@Cras.ca","Camila vitora santana silva","GMH74KYY6","travessa horizontina N° 11", "Feminino", "01/06/1992"),
+    ("Fusce@ornareplaceratorci.org","João Henrique bezerra","VIB61LXM9","Rua bom jardim N° 467", "Masculino", "09/11/1984");
+
+
+INSERT INTO contato ( telefone) VALUES
+	("87983342545"),
+    ("11933554884"),
+    ("74988521453"),
+    ("65454898426"),
+    ("31945465494"),
+    ("66546566556"),
+    ("59498489459"),
+    ("97845165982"),
+    ("16749875895"),
+    ("58856255532");
+    
+        /*Comandos de consulta*/
+    SELECT * FROM cadastro, contato;
+    SELECT email, senha FROM cadastro;
